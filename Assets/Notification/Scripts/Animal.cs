@@ -8,26 +8,25 @@ public class Animal : MonoBehaviour
     [SerializeField] private float _initialHappyness = 10f;
     [SerializeField] private float _maxHappyness = 150f;
     [SerializeField] private Slider _currentHappynessSlider;
+    [SerializeField] private Image _heartImage;
 
     [SerializeField] private float _currentHappyness;
     [SerializeField] private float _growindHappynessFactor = 10f;
-    [SerializeField] private float _reproductionHappynessThreshold = 100f;
+    [SerializeField] private float _reproductionHappynessThreshold = 150f;
 
 
     private float _nextActionTime = 0.0f;
     private bool _canReproduce = false;
     void Start()
     {
+        _heartImage.enabled = false;
         _currentHappyness = _initialHappyness;
     }
 
     void Update()
     {
         UpdateHapyness();
-        if (!_canReproduce)
-        {
-            CanReproduce();
-        }
+        CanReproduce();
     }
 
     void UpdateHapyness()
@@ -46,10 +45,11 @@ public class Animal : MonoBehaviour
 
     void CanReproduce()
     {
-        if (_currentHappyness >= _reproductionHappynessThreshold)
+        if (!_canReproduce && _currentHappyness >= _reproductionHappynessThreshold)
         {
             Debug.Log(gameObject.name + " can reproduce");
             _canReproduce = true;
+            _heartImage.enabled = true;
         }
     }
 }
