@@ -218,6 +218,8 @@ GameObject:
   - component: {fileID: 801659419}
   - component: {fileID: 801659421}
   - component: {fileID: 801659420}
+  - component: {fileID: 801659423}
+  - component: {fileID: 801659424}
   m_Layer: 5
   m_Name: Message
   m_TagString: Untagged
@@ -342,6 +344,48 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 801659418}
   m_CullTransparentMesh: 1
+--- !u!114 &801659423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801659418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df39445edd6cb234d9b659929985704d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _displayTime: 5
+  _lastDisplayTime: 0
+--- !u!114 &801659424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801659418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5086dba75e178944b08f9a0fa4734f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 28aef41e6e7e61f4dae74699b7345485, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 801659423}
+        m_TargetAssemblyTypeName: Notifier, Assembly-CSharp
+        m_MethodName: NotifyReproduce
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &864364623
 GameObject:
   m_ObjectHideFlags: 0
@@ -448,7 +492,6 @@ GameObject:
   - component: {fileID: 991289360}
   - component: {fileID: 991289359}
   - component: {fileID: 991289358}
-  - component: {fileID: 991289362}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -539,21 +582,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &991289362
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 991289357}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4733dbb05f634ff419f8c724d5c42542, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _displayTime: 5
-  _lastDisplayTime: 0
-  _info: {fileID: 801659420}
 --- !u!1 &1129728725
 GameObject:
   m_ObjectHideFlags: 0
@@ -742,6 +770,7 @@ GameObject:
   - component: {fileID: 1722331696}
   - component: {fileID: 1722331695}
   - component: {fileID: 1722331694}
+  - component: {fileID: 1722331698}
   m_Layer: 5
   m_Name: Radar
   m_TagString: Untagged
@@ -783,6 +812,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPos: {fileID: 333363709}
+  _eggIcon: {fileID: 1920291036676405888, guid: 5b64f53b86fbd79459d92917dae0bed4, type: 3}
 --- !u!114 &1722331695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -834,6 +864,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1722331692}
   m_CullTransparentMesh: 1
+--- !u!114 &1722331698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1722331692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5086dba75e178944b08f9a0fa4734f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 28aef41e6e7e61f4dae74699b7345485, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1722331694}
+        m_TargetAssemblyTypeName: Radar, Assembly-CSharp
+        m_MethodName: ItemDropped
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1881564252
 GameObject:
   m_ObjectHideFlags: 0
@@ -922,6 +980,14 @@ PrefabInstance:
     - target: {fileID: 2120453093877558537, guid: c581e7d6814514344a438c58a2c96bf0, type: 3}
       propertyPath: m_Name
       value: Animal
+      objectReference: {fileID: 0}
+    - target: {fileID: 2120453093877558538, guid: c581e7d6814514344a438c58a2c96bf0, type: 3}
+      propertyPath: _maxHappyness
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2120453093877558538, guid: c581e7d6814514344a438c58a2c96bf0, type: 3}
+      propertyPath: _reproductionHappynessThreshold
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2120453093877558550, guid: c581e7d6814514344a438c58a2c96bf0, type: 3}
       propertyPath: m_RootOrder

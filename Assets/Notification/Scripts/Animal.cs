@@ -14,6 +14,7 @@ public class Animal : MonoBehaviour
     [SerializeField] private float _growindHappynessFactor = 10f;
     [SerializeField] private float _reproductionHappynessThreshold = 150f;
 
+    [SerializeField] private Event _readyToReproduceEvent;
 
     private float _nextActionTime = 0.0f;
     private bool _canReproduce = false;
@@ -50,6 +51,7 @@ public class Animal : MonoBehaviour
             Debug.Log(gameObject.name + " can reproduce");
             _canReproduce = true;
             _heartImage.enabled = true;
+            _readyToReproduceEvent.Occured(gameObject);
         }
     }
 }
