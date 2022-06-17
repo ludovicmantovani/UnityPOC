@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Animal : MonoBehaviour
 {
+    [SerializeField] private string _animalName = "";
     [SerializeField] private float _initialHappyness = 10f;
     [SerializeField] private float _maxHappyness = 150f;
     [SerializeField] private Slider _currentHappynessSlider;
@@ -15,13 +17,29 @@ public class Animal : MonoBehaviour
     [SerializeField] private float _reproductionHappynessThreshold = 150f;
 
     [SerializeField] private Event _readyToReproduceEvent;
+    [SerializeField] private TMP_Text _nameUI;
 
     private float _nextActionTime = 0.0f;
     private bool _canReproduce = false;
+
+    public string AnimalName
+    {
+        get => _animalName;
+        set
+        {
+            _animalName = value;
+            _nameUI.text = value;
+        }
+    }
+
     void Start()
     {
         _heartImage.enabled = false;
         _currentHappyness = _initialHappyness;
+        if (_nameUI)
+        {
+            _nameUI.text = _animalName;
+        }
     }
 
     void Update()

@@ -45,6 +45,6 @@ public class Notifier : MonoBehaviour
 
     public void NotifyReproduce(GameObject gameObject)
     {
-        _messages.Enqueue(gameObject.name + " peut se reproduire");
+        _messages.Enqueue(gameObject.GetComponent<Animal>().AnimalName + " peut se reproduire");
     }
 }
