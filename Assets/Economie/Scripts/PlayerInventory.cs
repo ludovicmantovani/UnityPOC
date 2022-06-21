@@ -26,7 +26,7 @@ public class PlayerInventory : MonoBehaviour
             _graine = value;
             if (_graineUI)
             {
-                _graineUI.text = value.ToString();
+                _graineUI.text = value.ToString() + " graine";
             }
         }
     }
@@ -38,7 +38,7 @@ public class PlayerInventory : MonoBehaviour
             _fruit = value;
             if (_fruitUI)
             {
-                _fruitUI.text = value.ToString();
+                _fruitUI.text = value.ToString() + " fruit";
             }
         }
     }
@@ -50,7 +50,7 @@ public class PlayerInventory : MonoBehaviour
             _laine = value;
             if (_laineUI)
             {
-                _laineUI.text = value.ToString();
+                _laineUI.text = value.ToString() + " laine";
             }
         }
     }
@@ -62,7 +62,7 @@ public class PlayerInventory : MonoBehaviour
             _tissu = value;
             if (_tissuUI)
             {
-                _tissuUI.text = value.ToString();
+                _tissuUI.text = value.ToString() + " tissu";
             }
         }
     }
@@ -74,7 +74,7 @@ public class PlayerInventory : MonoBehaviour
             _argent = value;
             if (_argentUI)
             {
-                _argentUI.text = value.ToString();
+                _argentUI.text = value.ToString() + " argent";
             }
         }
     }
