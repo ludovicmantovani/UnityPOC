@@ -8,5 +8,6 @@ public enum Zones
     WOOL,
     TISSUE,
     MONEY,
-    SEED
+    SEED,
+    NONE
 }

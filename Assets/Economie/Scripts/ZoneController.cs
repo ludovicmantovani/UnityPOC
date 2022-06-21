@@ -20,7 +20,10 @@ public class ZoneController : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            Debug.Log("La player est entré dans la zone " + gameObject.transform.parent.gameObject.name);
+            if (_gameManager)
+            {
+                _gameManager.OnZoneEnter(_zoneType);
+            }
         }
     }
 }
