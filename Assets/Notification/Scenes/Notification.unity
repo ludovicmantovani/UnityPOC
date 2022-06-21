@@ -224,7 +224,7 @@ MonoBehaviour:
   accSprintMultiplier: 4
   lookSensitivity: 1
   dampingCoefficient: 5
-  focusOnEnable: 1
+  focusOnEnable: 0
 --- !u!1001 &555835658
 PrefabInstance:
   m_ObjectHideFlags: 0
