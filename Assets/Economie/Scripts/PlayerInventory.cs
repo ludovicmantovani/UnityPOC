@@ -81,11 +81,11 @@ public class PlayerInventory : MonoBehaviour
 
     void Start()
     {
-        _graineUI.text = _graine.ToString();
+        /*_graineUI.text = _graine.ToString();
         _fruitUI.text = _fruit.ToString();
         _laineUI.text = _laine.ToString();
         _tissuUI.text = _tissu.ToString();
-        _argentUI.text = _argent.ToString();
+        _argentUI.text = _argent.ToString();*/
 }
 
     void Update()
