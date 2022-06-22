@@ -6,11 +6,18 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private PlayerInventory _playerInventory;
+    [SerializeField] private GameObject _enclosureGO;
 
-    private Zones _lastTypeZone = Zones.NONE;
+    private Zone _lastTypeZone = Zone.NONE;
+
+    private bool _haveEnclosure = false;
 
     void Start()
     {
+        if (_enclosureGO)
+        {
+            _enclosureGO.SetActive(_haveEnclosure);
+        }
         if (_playerInventory)
         {
             _playerInventory.Graine = 5;
@@ -26,33 +33,33 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void OnZoneEnter(Zones typeZone)
+    public void OnZoneEnter(Zone typeZone)
     {
-        if (_lastTypeZone == Zones.NONE || _lastTypeZone != typeZone)
+        if (_lastTypeZone == Zone.NONE || _lastTypeZone != typeZone)
         {
             _lastTypeZone = typeZone;
-            Debug.Log("Entree en zone " + Enum.GetName(typeof(Zones), typeZone));
+            Debug.Log("Entree en zone " + Enum.GetName(typeof(Zone), typeZone));
             MakeTransaction(typeZone);
         }
     }
 
-    private void MakeTransaction(Zones typeZone)
+    private void MakeTransaction(Zone typeZone)
     {
         switch (typeZone)
         {
-            case Zones.FRUTS:
+            case Zone.FRUTS:
                 _playerInventory.Fruit += _playerInventory.Graine;
                 _playerInventory.Graine = 0;
                 break;
-            case Zones.WOOL:
+            case Zone.WOOL:
                 _playerInventory.Laine += _playerInventory.Fruit;
                 _playerInventory.Fruit = 0;
                 break;
-            case Zones.TISSUE:
+            case Zone.TISSUE:
                 _playerInventory.Tissu += _playerInventory.Laine;
                 _playerInventory.Laine = 0;
                 break;
-            case Zones.MONEY:
+            case Zone.SALE:
                 _playerInventory.Argent += _playerInventory.Laine;
                 _playerInventory.Argent += _playerInventory.Tissu;
                 _playerInventory.Argent += _playerInventory.Fruit;
@@ -60,7 +67,7 @@ public class GameManager : MonoBehaviour
                 _playerInventory.Tissu = 0;
                 _playerInventory.Fruit = 0;
                 break;
-            case Zones.SEED:
+            case Zone.PURCHASE:
                 _playerInventory.Graine += _playerInventory.Argent;
                 _playerInventory.Argent = 0;
                 break;

@@ -597,6 +597,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerInventory: {fileID: 1026080356}
+  _enclosureGO: {fileID: 1786790735}
 --- !u!4 &289454240
 Transform:
   m_ObjectHideFlags: 0

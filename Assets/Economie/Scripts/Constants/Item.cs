@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Zones
+public enum Item
 {
-    FRUTS,
-    WOOL,
-    TISSUE,
-    MONEY,
-    SEED,
+    Fruit,
+    laine,
+    tissu,
+    argent,
+    graine,
+    enclos,
     NONE
 }

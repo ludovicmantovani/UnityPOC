@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ZoneController : MonoBehaviour
 {
-    [SerializeField] private Zones _zoneType;
+    [SerializeField] private Zone _zoneType;
     [SerializeField] private GameManager _gameManager;
     void Start()
     {
