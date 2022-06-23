@@ -26,14 +26,14 @@ public class GameManager : MonoBehaviour
         {
             _enclosureGO.SetActive(false);
         }
-        if (_playerInventory)
+        /*if (_playerInventory)
         {
-            _playerInventory.Graine = 5;
-            _playerInventory.Fruit = 0;
-            _playerInventory.Laine = 0;
-            _playerInventory.Tissu = 0;
-            _playerInventory.Argent = 0;
-        }
+            _playerInventory.inventory[Item.graine] = 5;
+            _playerInventory.inventory[Item.fruit] = 0;
+            _playerInventory.inventory[Item.laine] = 0;
+            _playerInventory.inventory[Item.tissu] = 0;
+            _playerInventory.inventory[Item.argent] = 0;
+        }*/
 
         if (_levels != null && _levels.Count > 0)
         {
@@ -126,47 +126,28 @@ public class GameManager : MonoBehaviour
 
     private void MakeTransaction(TransactionScriptableObject transaction)
     {
-        MakeTransaction(transaction.zone);
-        if (transaction.outputItem == Item.enclos)
+        //MakeTransaction(transaction.zone);
+        
+        // Si l'utilisateur a ce qu'il faut d'item d'entre
+        if (_playerInventory.inventory[transaction.inputItem] >= transaction.inputQuantity)
         {
-            if (_enclosureGO)
+            //On lui retire l'item
+            _playerInventory.inventory[transaction.inputItem] -= transaction.inputQuantity;
+
+            if (transaction.outputItem == Item.enclos)
             {
-                _enclosureGO.SetActive(true);
+                if (_enclosureGO)
+                {
+                    _enclosureGO.SetActive(true);
+                }
+            }
+            else if (transaction.outputItem != Item.NONE)
+            {
+                //On lui ajoute l'item
+                _playerInventory.inventory[transaction.outputItem] += transaction.outputQuantity;
             }
         }
     }
 
-    private void MakeTransaction(Zone typeZone)
-    {
-        switch (typeZone)
-        {
-            case Zone.FRUTS:
-                _playerInventory.Fruit += _playerInventory.Graine;
-                _playerInventory.Graine = 0;
-                break;
-            case Zone.WOOL:
-                _playerInventory.Laine += _playerInventory.Fruit;
-                _playerInventory.Fruit = 0;
-                break;
-            case Zone.TISSUE:
-                _playerInventory.Tissu += _playerInventory.Laine;
-                _playerInventory.Laine = 0;
-                break;
-            case Zone.SALE:
-                _playerInventory.Argent += _playerInventory.Laine;
-                _playerInventory.Argent += _playerInventory.Tissu;
-                _playerInventory.Argent += _playerInventory.Fruit;
-                _playerInventory.Laine = 0;
-                _playerInventory.Tissu = 0;
-                _playerInventory.Fruit = 0;
-                break;
-            case Zone.PURCHASE:
-                _playerInventory.Graine += _playerInventory.Argent;
-                _playerInventory.Argent = 0;
-                break;
-            default:
-                Debug.Log("Default");
-                break;
-        }
-    }
+    
 }

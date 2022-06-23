@@ -4,7 +4,7 @@ using UnityEngine;
 
 public enum Item
 {
-    Fruit,
+    fruit,
     laine,
     tissu,
     argent,

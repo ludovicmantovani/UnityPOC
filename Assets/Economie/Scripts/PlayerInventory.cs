@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,84 +13,26 @@ public class PlayerInventory : MonoBehaviour
     [SerializeField] private TMP_Text _tissuUI;
     [SerializeField] private TMP_Text _argentUI;
 
-    private int _graine = 0;
-    private int _fruit = 0;
-    private int _laine = 0;
-    private int _tissu = 0;
-    private int _argent = 0;
 
-    public int Graine
-    {
-        get => _graine;
-        set
-        {
-            _graine = value;
-            if (_graineUI)
-            {
-                _graineUI.text = value.ToString() + " graine";
-            }
-        }
-    }
-    public int Fruit
-    {
-        get => _fruit;
-        set
-        {
-            _fruit = value;
-            if (_fruitUI)
-            {
-                _fruitUI.text = value.ToString() + " fruit";
-            }
-        }
-    }
-    public int Laine 
-    {
-        get => _laine;
-        set
-        {
-            _laine = value;
-            if (_laineUI)
-            {
-                _laineUI.text = value.ToString() + " laine";
-            }
-        }
-    }
-    public int Tissu 
-    {
-        get => _tissu;
-        set
-        {
-            _tissu = value;
-            if (_tissuUI)
-            {
-                _tissuUI.text = value.ToString() + " tissu";
-            }
-        }
-    }
-    public int Argent 
-    { 
-        get => _argent;
-        set
-        {
-            _argent = value;
-            if (_argentUI)
-            {
-                _argentUI.text = value.ToString() + " argent";
-            }
-        }
-    }
+    public Dictionary<Item, int> inventory;
 
     void Start()
     {
-        /*_graineUI.text = _graine.ToString();
-        _fruitUI.text = _fruit.ToString();
-        _laineUI.text = _laine.ToString();
-        _tissuUI.text = _tissu.ToString();
-        _argentUI.text = _argent.ToString();*/
+        inventory = new Dictionary<Item, int>();
+
+        inventory.Add(Item.fruit, 0);
+        inventory.Add(Item.graine, 5);
+        inventory.Add(Item.laine, 0);
+        inventory.Add(Item.tissu, 0);
+        inventory.Add(Item.argent, 0);
 }
 
     void Update()
     {
-        
+        _graineUI.text = inventory[Item.graine].ToString() + " graine";
+        _fruitUI.text = inventory[Item.fruit].ToString() + " fruit";
+        _laineUI.text = inventory[Item.laine].ToString() + " laine";
+        _tissuUI.text = inventory[Item.tissu].ToString() + " tissu";
+        _argentUI.text = inventory[Item.argent].ToString() + " graine";
     }
 }

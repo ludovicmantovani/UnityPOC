@@ -17,3 +17,4 @@ MonoBehaviour:
   inputQuantity: 5
   outputItem: 3
   unitPrice: 2
+  outputQuantity: 10

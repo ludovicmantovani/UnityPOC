@@ -16,4 +16,4 @@ MonoBehaviour:
   inputItem: 4
   inputQuantity: 4
   outputItem: 0
-  unitPrice: 0
+  outputQuantity: 4

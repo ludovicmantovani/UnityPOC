@@ -10,5 +10,5 @@ public class TransactionScriptableObject : ScriptableObject
     public Item inputItem = Item.NONE;
     public int inputQuantity = 0;
     public Item outputItem = Item.NONE;
-    public int unitPrice = 0;
+    public int outputQuantity = 0;
 }

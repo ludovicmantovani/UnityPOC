@@ -16,4 +16,4 @@ MonoBehaviour:
   inputItem: 0
   inputQuantity: 3
   outputItem: 3
-  unitPrice: 2
+  outputQuantity: 6
