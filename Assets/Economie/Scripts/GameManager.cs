@@ -8,17 +8,16 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private PlayerInventory _playerInventory;
+    [SerializeField] private IAPlayerController _iAPlayerController;
     [SerializeField] private GameObject _enclosureGO;
     [SerializeField] private List<LevelScriptableObject> _levels;
     [SerializeField] private TMP_Text _levelInfo;
 
 
-    private Zone _lastTypeZone = Zone.NONE;
-
     private bool _doTransaction = false;
 
-    private int _levelIndex = -1;
-    private int _sequenceIndex = -1;
+    private int _levelIndex = 0;
+    private int _sequenceIndex = 0;
     private TransactionScriptableObject _currentTransaction;
 
     void Start()
@@ -67,8 +66,11 @@ public class GameManager : MonoBehaviour
     {
         if (_doTransaction && _currentTransaction)
         {
-
-            //set player destination to _currentTransaction.zone;
+            if (_iAPlayerController != null &&
+                _currentTransaction.zone != _iAPlayerController.CurrentZone)
+            {
+                _iAPlayerController.CurrentZone = _currentTransaction.zone;
+            }
         }
     }
 
