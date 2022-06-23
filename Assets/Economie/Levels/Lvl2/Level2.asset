@@ -10,11 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fa47116771380d444bdc154bd9619c2f, type: 3}
-  m_Name: Lvl1
+  m_Name: Level2
   m_EditorClassIdentifier: 
-  nbr: 1
-  sequence:
-  - {fileID: 11400000, guid: 058c49798c0970143a9d9ca1a8b64c12, type: 2}
-  - {fileID: 11400000, guid: 33f7c4a0c1192ed46935a853e3d00d85, type: 2}
-  - {fileID: 11400000, guid: a3434c803f9f05a4aaec40ce782beb79, type: 2}
-  - {fileID: 11400000, guid: 6a2acc5467726cf45b01645f74ab9c4c, type: 2}
+  nbr: 2
+  sequence: []

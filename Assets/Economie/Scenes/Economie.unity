@@ -598,7 +598,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerInventory: {fileID: 1026080356}
   _iAPlayerController: {fileID: 1026080357}
-  _enclosureGO: {fileID: 1786790735}
+  _laineProdGO: {fileID: 1786790735}
+  _tissuProdGO: {fileID: 864302519}
   _levels:
   - {fileID: 11400000, guid: 3eb152a06192e2241a003de90e1581ae, type: 2}
   - {fileID: 11400000, guid: 5a2c616f2f4f0ac49b2f6bffb124e294, type: 2}

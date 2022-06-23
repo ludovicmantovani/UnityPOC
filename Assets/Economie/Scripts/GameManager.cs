@@ -9,7 +9,8 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private PlayerInventory _playerInventory;
     [SerializeField] private IAPlayerController _iAPlayerController;
-    [SerializeField] private GameObject _enclosureGO;
+    [SerializeField] private GameObject _laineProdGO;
+    [SerializeField] private GameObject _tissuProdGO;
     [SerializeField] private List<LevelScriptableObject> _levels;
     [SerializeField] private TMP_Text _levelInfo;
 
@@ -22,9 +23,13 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        if (_enclosureGO)
+        if (_laineProdGO)
         {
-            _enclosureGO.SetActive(false);
+            _laineProdGO.SetActive(false);
+        }
+        if (_tissuProdGO)
+        {
+            _tissuProdGO.SetActive(false);
         }
         /*if (_playerInventory)
         {
@@ -136,9 +141,9 @@ public class GameManager : MonoBehaviour
 
             if (transaction.outputItem == Item.enclos)
             {
-                if (_enclosureGO)
+                if (_laineProdGO)
                 {
-                    _enclosureGO.SetActive(true);
+                    _laineProdGO.SetActive(true);
                 }
             }
             else if (transaction.outputItem != Item.NONE)
