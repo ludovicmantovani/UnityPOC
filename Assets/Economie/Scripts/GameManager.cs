@@ -120,13 +120,6 @@ public class GameManager : MonoBehaviour
     }
     public void OnZoneEnter(Zone typeZone)
     {
-        /**if (_lastTypeZone == Zone.NONE || _lastTypeZone != typeZone)
-        {
-            _lastTypeZone = typeZone;
-            Debug.Log("Entree en zone " + Enum.GetName(typeof(Zone), typeZone));
-            MakeTransaction(typeZone);
-        }**/
-
         if (typeZone == _currentTransaction.zone)
         {
             MakeTransaction(_currentTransaction);
@@ -187,7 +180,7 @@ public class GameManager : MonoBehaviour
                     _laineProdGO.SetActive(true);
                 }
             }
-            else if (transaction.outputItem != Item.NONE)
+            if (transaction.outputItem != Item.NONE)
             {
                 //On lui ajoute l'item
                 _playerInventory.inventory[transaction.outputItem] += transaction.outputQuantity;

@@ -12,6 +12,7 @@ public class PlayerInventory : MonoBehaviour
     [SerializeField] private TMP_Text _laineUI;
     [SerializeField] private TMP_Text _tissuUI;
     [SerializeField] private TMP_Text _argentUI;
+    [SerializeField] private TMP_Text _enclosUI;
 
 
     public Dictionary<Item, int> inventory;
@@ -25,6 +26,7 @@ public class PlayerInventory : MonoBehaviour
         inventory.Add(Item.laine, 0);
         inventory.Add(Item.tissu, 0);
         inventory.Add(Item.argent, 0);
+        inventory.Add(Item.enclos, 0);
 }
 
     void Update()
@@ -34,5 +36,6 @@ public class PlayerInventory : MonoBehaviour
         _laineUI.text = inventory[Item.laine].ToString() + " laine";
         _tissuUI.text = inventory[Item.tissu].ToString() + " tissu";
         _argentUI.text = inventory[Item.argent].ToString() + " argent";
+        _enclosUI.text = inventory[Item.enclos].ToString() + " enclos";
     }
 }
