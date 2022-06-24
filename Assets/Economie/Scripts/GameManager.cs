@@ -31,14 +31,6 @@ public class GameManager : MonoBehaviour
         {
             _tissuProdGO.SetActive(false);
         }
-        /*if (_playerInventory)
-        {
-            _playerInventory.inventory[Item.graine] = 5;
-            _playerInventory.inventory[Item.fruit] = 0;
-            _playerInventory.inventory[Item.laine] = 0;
-            _playerInventory.inventory[Item.tissu] = 0;
-            _playerInventory.inventory[Item.argent] = 0;
-        }*/
 
         if (_levels != null && _levels.Count > 0)
         {
@@ -120,6 +112,13 @@ public class GameManager : MonoBehaviour
             _sequenceIndex = 0;
             _levelIndex++;
             DisplayLevelInfo(_levels[_levelIndex]);
+            if (_levels[_levelIndex].nbr == 3)
+            {
+                if (_tissuProdGO)
+                {
+                    _tissuProdGO.SetActive(true);
+                }
+            }
         }
         else
         {
@@ -134,11 +133,15 @@ public class GameManager : MonoBehaviour
         //MakeTransaction(transaction.zone);
         
         // Si l'utilisateur a ce qu'il faut d'item d'entre
-        if (_playerInventory.inventory[transaction.inputItem] >= transaction.inputQuantity)
+        if (transaction.inputItem == Item.NONE ||
+            _playerInventory.inventory[transaction.inputItem] >= transaction.inputQuantity)
         {
-            //On lui retire l'item
-            _playerInventory.inventory[transaction.inputItem] -= transaction.inputQuantity;
-
+            if (transaction.inputItem != Item.NONE)
+            {
+                //On lui retire l'item
+                _playerInventory.inventory[transaction.inputItem] -= transaction.inputQuantity;
+            }
+            
             if (transaction.outputItem == Item.enclos)
             {
                 if (_laineProdGO)

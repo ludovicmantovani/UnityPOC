@@ -13,4 +13,9 @@ MonoBehaviour:
   m_Name: Level2
   m_EditorClassIdentifier: 
   nbr: 2
-  sequence: []
+  sequence:
+  - {fileID: 11400000, guid: c7dac02dd1c46b84290bf3436e8eef94, type: 2}
+  - {fileID: 11400000, guid: c549a99fd213b3b498c6f8c7e025e915, type: 2}
+  - {fileID: 11400000, guid: 40d224a3037db00458c69b82a03bcc45, type: 2}
+  - {fileID: 11400000, guid: 59cda24cb5778f54e9955a319ee3ce1b, type: 2}
+  - {fileID: 11400000, guid: 174f884ffeeff274685b192f621f14d5, type: 2}

@@ -242,11 +242,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2120453093877558538, guid: c581e7d6814514344a438c58a2c96bf0, type: 3}
       propertyPath: _maxHappyness
-      value: 150
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 2120453093877558538, guid: c581e7d6814514344a438c58a2c96bf0, type: 3}
       propertyPath: _reproductionHappynessThreshold
-      value: 150
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 2120453093877558550, guid: c581e7d6814514344a438c58a2c96bf0, type: 3}
       propertyPath: m_RootOrder
@@ -1159,6 +1159,18 @@ PrefabInstance:
     - target: {fileID: 2120453093877558537, guid: c581e7d6814514344a438c58a2c96bf0, type: 3}
       propertyPath: m_Name
       value: Animal
+      objectReference: {fileID: 0}
+    - target: {fileID: 2120453093877558538, guid: c581e7d6814514344a438c58a2c96bf0, type: 3}
+      propertyPath: _maxHappyness
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2120453093877558538, guid: c581e7d6814514344a438c58a2c96bf0, type: 3}
+      propertyPath: _initialHappyness
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2120453093877558538, guid: c581e7d6814514344a438c58a2c96bf0, type: 3}
+      propertyPath: _reproductionHappynessThreshold
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2120453093877558550, guid: c581e7d6814514344a438c58a2c96bf0, type: 3}
       propertyPath: m_RootOrder

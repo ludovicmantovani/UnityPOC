@@ -33,6 +33,6 @@ public class PlayerInventory : MonoBehaviour
         _fruitUI.text = inventory[Item.fruit].ToString() + " fruit";
         _laineUI.text = inventory[Item.laine].ToString() + " laine";
         _tissuUI.text = inventory[Item.tissu].ToString() + " tissu";
-        _argentUI.text = inventory[Item.argent].ToString() + " graine";
+        _argentUI.text = inventory[Item.argent].ToString() + " argent";
     }
 }
