@@ -12,7 +12,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _laineProdGO;
     [SerializeField] private GameObject _tissuProdGO;
     [SerializeField] private List<LevelScriptableObject> _levels;
+
     [SerializeField] private TMP_Text _levelInfo;
+    [SerializeField] private TMP_Text _seedInfo;
+    [SerializeField] private TMP_Text _enclosureInfo;
+    [SerializeField] private TMP_Text _frutsInfo;
+    [SerializeField] private TMP_Text _woolInfo;
+    [SerializeField] private TMP_Text _tissuInfo;
 
 
     private bool _doTransaction = false;
@@ -41,20 +47,6 @@ public class GameManager : MonoBehaviour
                 _doTransaction = true;
             }
         }
-
-
-
-        /*for (int i = 0; i < _levels.Count; i++)
-        {
-            LevelScriptableObject _level = _levels[i];
-
-            
-            for (int x = 0; x < _level.sequence.Count; x++)
-            {
-                TransactionScriptableObject transaction = _level.sequence[x];
-                // Si la destination du joueur 
-            }
-        }*/
     }
 
 
@@ -78,6 +70,52 @@ public class GameManager : MonoBehaviour
             string levelText = "Niveau " + level.nbr.ToString();
             _levelInfo.text = levelText;
             Debug.Log(levelText);
+        }
+
+        if (_seedInfo && level.seedUnitPrice > 0)
+        {
+            _seedInfo.text = level.seedUnitPrice.ToString() + "€ / graine";
+        }
+        else
+        {
+            _seedInfo.text = "";
+        }
+
+
+        if (_enclosureInfo && level.enclosureUnitPrice > 0)
+        {
+            _enclosureInfo.text = level.enclosureUnitPrice.ToString() + "€ / enclos";
+        }
+        else
+        {
+            _enclosureInfo.text = "";
+        }
+
+        if (_frutsInfo && level.frutsUnitPrice > 0)
+        {
+            _frutsInfo.text = level.frutsUnitPrice.ToString() + "€ / fruit";
+        }
+        else
+        {
+            _frutsInfo.text = "";
+        }
+
+        if (_woolInfo && level.woolUnitPrice > 0)
+        {
+            _woolInfo.text = level.woolUnitPrice.ToString() + "€ / laine";
+        }
+        else
+        {
+            _woolInfo.text = "";
+        }
+
+        if (_tissuInfo && level.tissuUnitPrice > 0)
+        {
+            _tissuInfo.text = level.tissuUnitPrice.ToString() + "€ / tissu";
+        }
+        else
+        {
+            _tissuInfo.text = "";
         }
     }
     public void OnZoneEnter(Zone typeZone)

@@ -24,3 +24,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e03ff0a023c9f134585e95ddd6eb0774, type: 2}
   - {fileID: 11400000, guid: bb13fb0bba8c5084fb0ded03c86abaaf, type: 2}
   - {fileID: 11400000, guid: 638fb7205e4a495489c29ddce4b1531c, type: 2}
+  seedUnitPrice: 6
+  enclosureUnitPrice: 12
+  frutsUnitPrice: 2
+  woolUnitPrice: 4
+  tissuUnitPrice: 12

@@ -9,4 +9,9 @@ public class LevelScriptableObject : ScriptableObject
 {
     public int nbr;
     public List<TransactionScriptableObject> sequence;
+    public int seedUnitPrice;
+    public int enclosureUnitPrice;
+    public int frutsUnitPrice;
+    public int woolUnitPrice;
+    public int tissuUnitPrice;
 }

@@ -18,3 +18,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 33f7c4a0c1192ed46935a853e3d00d85, type: 2}
   - {fileID: 11400000, guid: a3434c803f9f05a4aaec40ce782beb79, type: 2}
   - {fileID: 11400000, guid: 6a2acc5467726cf45b01645f74ab9c4c, type: 2}
+  seedUnitPrice: 4
+  enclosureUnitPrice: 2
+  frutsUnitPrice: 2
+  woolUnitPrice: 0
+  tissuUnitPrice: 0
